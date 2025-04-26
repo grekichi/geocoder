@@ -344,6 +344,10 @@ class OsmQuery(MultipleResultsQuery):
             self.url = url
         # else:  do not change self.url, which is cls._URL
 
+    # modified for new require from osm new rules
+    def _build_headers(self, provider_key, **kwargs):
+        return {'User-Agent': 'My User Agent 1.0'}
+
 
 class OsmQueryDetail(MultipleResultsQuery):
     """
